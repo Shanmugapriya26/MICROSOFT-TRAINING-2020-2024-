@@ -45,7 +45,7 @@ class Solution {
                 if(h==1) ps.next=q;
                 s.next=q.next;
             }
-        } while(sam==0);
+        } while(s==0);
         if(h==0) return q;
         return head;
     }
