@@ -4,10 +4,10 @@ class Solution {
             return head;
         }
         if(left==right) return head;
-        int le=1,ri=1;
-        int hlo=0,flag=0,sam=0;
-        if(left!=le) {
-            hlo=1;
+        int l=1,r=1;
+        int h=0,flag=0,s=0;
+        if(left!=l) {
+            h=1;
         }
         ListNode p=null;
         ListNode q=head;
@@ -16,16 +16,16 @@ class Solution {
         ListNode s=null;
        
         do {
-            if(flag==0 && le==left) {
-                if(hlo==1) ps=p;
+            if(flag==0 && l==left) {
+                if(h==1) ps=p;
                 s=q;
                 flag=1;
                 p=q;
                 q=r;
                 r=r.next;
             } else if(flag==1) {
-                if(ri==right) {
-                    sam=1;
+                if(r==right) {
+                    s=1;
                     q.next=p;
                 }
                 else {
@@ -39,14 +39,14 @@ class Solution {
                 q=r;
                 r=r.next;
             }
-            le++;
-            ri++;
-            if(sam==0 && ri==right){
-                if(hlo==1) ps.next=q;
+            l++;
+            r++;
+            if(s==0 && r==right){
+                if(h==1) ps.next=q;
                 s.next=q.next;
             }
         } while(sam==0);
-        if(hlo==0) return q;
+        if(h==0) return q;
         return head;
     }
 }
